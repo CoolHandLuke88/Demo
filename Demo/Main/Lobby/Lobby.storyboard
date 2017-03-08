@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="t5n-3o-zB5">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Demo-->
+        <scene sceneID="V1b-2W-M1N">
+            <objects>
+                <viewController storyboardIdentifier="LobbyRootViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3bg-MV-ynQ" customClass="LobbyRootViewController" customModule="Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ucP-gh-Ylm"/>
+                        <viewControllerLayoutGuide type="bottom" id="R8d-kP-wv6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dol-K9-CcM">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="But-sI-xpZ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="3bg-MV-ynQ" id="goc-Wu-qZP"/>
+                                    <outlet property="delegate" destination="3bg-MV-ynQ" id="0mH-XN-JNu"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="But-sI-xpZ" secondAttribute="trailing" id="Ryj-nX-gjg"/>
+                            <constraint firstItem="R8d-kP-wv6" firstAttribute="top" secondItem="But-sI-xpZ" secondAttribute="bottom" id="eG3-0x-pmQ"/>
+                            <constraint firstItem="But-sI-xpZ" firstAttribute="top" secondItem="ucP-gh-Ylm" secondAttribute="bottom" id="vcT-0u-TEY"/>
+                            <constraint firstItem="But-sI-xpZ" firstAttribute="leading" secondItem="dol-K9-CcM" secondAttribute="leading" id="xdm-71-GOL"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Demo" id="GNc-Lo-cOq"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="But-sI-xpZ" id="kDb-fl-vCh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dbH-uX-eVJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1288.8" y="-1684.4077961019491"/>
+        </scene>
+        <!--Lobby-->
+        <scene sceneID="zgR-zy-mFa">
+            <objects>
+                <navigationController storyboardIdentifier="LobbyRootViewController-NAV" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="t5n-3o-zB5" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Lobby" id="R3W-h2-z8a"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="DBD-CC-l88">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3bg-MV-ynQ" kind="relationship" relationship="rootViewController" id="brb-6Y-ifo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pqm-Oo-cO5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="576.79999999999995" y="-1684.4077961019491"/>
+        </scene>
+    </scenes>
+</document>

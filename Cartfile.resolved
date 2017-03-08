@@ -1,0 +1,6 @@
+github "Alamofire/Alamofire" "4.4.0"
+github "hyperoslo/Compass" "5.0.0"
+github "dzenbot/DZNEmptyDataSet" "v1.8.1"
+github "goktugyil/EZSwiftExtensions" "1.9"
+github "MrAlek/PagedArray" "0.6"
+github "Alamofire/AlamofireImage" "3.2.0"

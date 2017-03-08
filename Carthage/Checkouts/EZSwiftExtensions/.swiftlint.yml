@@ -1,0 +1,13 @@
+excluded:
+  - Pods
+  - EZSwiftExtensionsTests
+line_length: 160
+file_length: 1000
+disabled_rules:
+  - type_body_length
+  - function_body_length
+  - type_name
+  - variable_name
+  - valid_docs
+  - todo
+  - variable_name_min_length

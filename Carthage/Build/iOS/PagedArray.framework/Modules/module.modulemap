@@ -1,0 +1,10 @@
+framework module PagedArray {
+  umbrella header "PagedArray.h"
+
+  export *
+  module * { export * }
+}
+
+module PagedArray.Swift {
+    header "PagedArray-Swift.h"
+}

@@ -1,0 +1,30 @@
+osx_image: xcode8
+language: objective-c
+rvm: 2.2.2
+cache: cocoapods
+
+env:
+  global:
+    - PROJECT=EZSwiftExtensions.xcodeproj
+
+before_install:
+  - gem install cocoapods --pre --no-rdoc --no-ri --no-document --quiet
+  - gem install xcpretty
+  - gem install xcpretty-json-formatter
+  - brew unlink swiftlint
+  - brew install swiftlint
+
+before_script:
+  - swiftlint
+
+script:
+  - set -o pipefail
+  
+  - xcodebuild clean build test -project "$PROJECT" -scheme EZSwiftExtensions-iOS -destination 'platform=iOS Simulator,name=iPhone SE,OS=10.0' | XCPRETTY_JSON_FILE_OUTPUT="xcodebuild-ios.json" xcpretty -f `xcpretty-json-formatter`
+  - xcodebuild clean build test -project "$PROJECT" -scheme EZSwiftExtensions-tvOS -destination 'platform=tvOS Simulator,name=Apple TV 1080p,OS=10.0' | XCPRETTY_JSON_FILE_OUTPUT="xcodebuild-tvos.json" xcpretty -f `xcpretty-json-formatter`
+  
+  - pod lib lint
+  - bundle exec danger --fail-on-errors=true
+  
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
